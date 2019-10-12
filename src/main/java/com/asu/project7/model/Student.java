@@ -10,21 +10,21 @@ public class Student {
     @SequenceGenerator(name = "Student_id",sequenceName = "Student_Seq")
     @GeneratedValue(generator = "Student_id")
     @Column(name = "studentId")
-    private Long studentId;
+    private int studentId;
     private String name;
     private String dateOfBirth;
 
-    public Student(Long studentId, String name, String dateOfBirth) {
+    public Student(int studentId, String name, String dateOfBirth) {
         this.studentId = studentId;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
     }
 
-    public Long getStudentId() {
+    public int getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(Long studentId) {
+    public void setStudentId(int studentId) {
         this.studentId = studentId;
     }
 

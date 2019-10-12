@@ -13,6 +13,7 @@ public class SandboxController {
 
     @Autowired
     private StudentRepository studentRepository;
+    @Autowired
     SandboxService sandboxService;
 
 @RequestMapping(value = "/login",method = RequestMethod.POST)
