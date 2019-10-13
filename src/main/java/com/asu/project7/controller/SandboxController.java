@@ -23,4 +23,9 @@ public void verifyLogin(@RequestBody Student student){
 
 }
 
+@RequestMapping(value = "/addStudent",method = RequestMethod.POST)
+public void addStudent(@RequestBody Student student){
+        this.sandboxService.addStudent(student);
+    }
+
 }

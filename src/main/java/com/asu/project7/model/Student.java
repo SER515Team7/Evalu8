@@ -20,6 +20,12 @@ public class Student {
         this.dateOfBirth = dateOfBirth;
     }
 
+    public Student() {
+        this.studentId=007;
+        this.name = "name";
+        this.dateOfBirth = "dateOfBirth";
+    }
+
     public int getStudentId() {
         return studentId;
     }
