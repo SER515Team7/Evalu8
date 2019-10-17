@@ -21,7 +21,9 @@ public class SandboxController {
     @RequestMapping(value="/validate")
     public ExpressionDTO validateExpression(String expression){
         ExpressionDTO expressionDTO = new ExpressionDTO();
-       // expressionDTO;
+
+        expressionDTO=sandboxService.validateExpression(expression);
+
         return  expressionDTO;
     }
 

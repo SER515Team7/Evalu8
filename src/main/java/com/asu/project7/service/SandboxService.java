@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class SandboxService {
 
-    private ExpressionDTO validateExpression(){
+    public ExpressionDTO validateExpression(String expression){
         ExpressionDTO expressionDTO = new ExpressionDTO();
         return expressionDTO;
     }
