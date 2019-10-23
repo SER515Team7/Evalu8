@@ -4,5 +4,5 @@ public class ExpressionDTO {
 
     public double result;
     public boolean isValid;
-    //public errorMessage;
+    public String errorMessage;
 }
