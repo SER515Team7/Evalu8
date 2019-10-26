@@ -3,6 +3,7 @@ package com.asu.project7.service;
 import com.asu.project7.model.Student;
 import com.asu.project7.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -27,10 +28,13 @@ public class SandboxService {
                 Optional<Student> retrievedStudent = this.studentRepository.findById(student.getStudentId());
                 if (retrievedStudent.get().getStudentId() == student.getStudentId()){
                     System.out.println("Student Exists");
+                    student=retrievedStudent.get();
+                    loginResult=new ResponseEntity<Student>(student, HttpStatus.FOUND);
                 }
             }
             catch (NoSuchElementException e){
                 System.out.println(e.toString());
+                loginResult=new ResponseEntity<Student>(student, HttpStatus.NOT_FOUND);
             }
 
             /*System.out.println("Name "+byId.get().getName());*/

@@ -26,7 +26,7 @@ public class Student {
         this.studentId=007;
         this.name = "name";
         this.dateOfBirth = "dateOfBirth";
-        this.grade=3;
+        this.grade=99;
     }
 
     public int getStudentId() {
