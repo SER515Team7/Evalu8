@@ -16,6 +16,17 @@ public class SandboxService {
             return expressionDTO;
         }
 
+        final String uri = "http://api.mathjs.org/v4/";//API for validating and evaluating math expressions
+        RestTemplate restTemplate = new RestTemplate();
+
+        String request = "{\"expr\":[\""+expression+"\"]}";
+        expressionDTO = restTemplate.postForObject(uri,request,ExpressionDTO.class);
+        if(expressionDTO.error==null)
+            expressionDTO.setValid(true);
+        else
+            expressionDTO.setValid(false);
+
+
         return expressionDTO;
     }
 }
