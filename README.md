@@ -10,3 +10,14 @@ spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=false
+
+The input JSON format for the Login:
+
+{
+    "studentId": "2",
+    "dateOfBirth": "",
+    "name": "",
+    "grade":""
+}
+
+

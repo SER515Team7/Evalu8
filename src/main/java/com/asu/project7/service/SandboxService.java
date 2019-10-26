@@ -33,7 +33,7 @@ public class SandboxService {
                 }
             }
             catch (NoSuchElementException e){
-                System.out.println(e.toString());
+                System.out.println(e.toString()+" Student does not");
                 loginResult=new ResponseEntity<Student>(student, HttpStatus.NOT_FOUND);
             }
 
