@@ -1,9 +1,9 @@
 package com.asu.project7.service;
 
-import com.asu.project7.dto.StudentDTO;
 import com.asu.project7.model.Student;
 import com.asu.project7.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
@@ -16,7 +16,10 @@ public class SandboxService {
     private StudentRepository studentRepository;
 
 
-    public void verifyLogin(Student student) {
+    public ResponseEntity<Student> verifyLogin(Student student) {
+
+        System.out.println(student.getStudentId());
+        ResponseEntity<Student> loginResult=null;
 
         if(0 < student.getStudentId()){
 
@@ -34,6 +37,8 @@ public class SandboxService {
 
 
         }
+
+        return loginResult;
     }
 
     public void addStudent(Student student){

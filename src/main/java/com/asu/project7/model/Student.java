@@ -13,17 +13,20 @@ public class Student {
     private int studentId;
     private String name;
     private String dateOfBirth;
+    private int grade;
 
-    public Student(int studentId, String name, String dateOfBirth) {
+    public Student(int studentId, String name, String dateOfBirth, int grade) {
         this.studentId = studentId;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
+        this.grade = grade;
     }
 
     public Student() {
         this.studentId=007;
         this.name = "name";
         this.dateOfBirth = "dateOfBirth";
+        this.grade=3;
     }
 
     public int getStudentId() {
@@ -48,5 +51,13 @@ public class Student {
 
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public int getGrade() {
+        return grade;
+    }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
     }
 }

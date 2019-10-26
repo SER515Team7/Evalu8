@@ -5,6 +5,9 @@ import com.asu.project7.model.Student;
 import com.asu.project7.repository.StudentRepository;
 import com.asu.project7.service.SandboxService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/sandbox")
@@ -16,10 +19,12 @@ public class SandboxController {
     @Autowired
     SandboxService sandboxService;
 
-@RequestMapping(value = "/login",method = RequestMethod.POST)
-public void verifyLogin(@RequestBody Student student){
+@RequestMapping(value = "/login",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+public ResponseEntity<Student> verifyLogin(@RequestBody Student student){
 
-    this.sandboxService.verifyLogin(student);
+    return this.sandboxService.verifyLogin(student);
+    //return new ResponseEntity<String>("message", HttpStatus.NOT_FOUND);
+
 
 }
 
