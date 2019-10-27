@@ -85,6 +85,9 @@
           color: white;
           margin:5px;
           }
+          .full-span{
+          	width: 100% !important;
+          }
           /* (NUMBER / OPERATOR) SPAN TEXT */
           .numberOperatorText{
           font-size: 50px;
