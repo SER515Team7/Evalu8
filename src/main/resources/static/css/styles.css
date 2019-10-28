@@ -87,6 +87,7 @@
           }
           .full-span{
           	width: 100% !important;
+          	background: darkolivegreen;
           }
           /* (NUMBER / OPERATOR) SPAN TEXT */
           .numberOperatorText{
