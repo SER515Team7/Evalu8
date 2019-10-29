@@ -7,49 +7,13 @@
        var loginJson = {};
        loginJson["username"] = userName;
        loginJson["dob"] = dob;
-<<<<<<< HEAD
-       jsonWrapper["login"] = loginJson;
-       console.log(jsonWrapper);
-       loginAjaxCall(jsonWrapper);
-=======
-        ajaxCallForLogin(loginJson);
->>>>>>> US_7_Login
-     
-     
-     
-     }
-<<<<<<< HEAD
-     
-     function loginAjaxCall(jsonWrapper){
-            
-            
-            $.ajax({url: "https://api.myjson.com/bins/iwdug", 
-                   
-                   success: function(data){
-                   data = data["login"];
-                   if(data["result"] == "success"){
-                          if( data["grade"] == "1" ){
-                               window.location.href = "index.html";
-                          }
-                          else if(data["grade"] == "2"){
-                               window.location.href = "index1.html";
-                          } 
-                   }
-                   },
-                   error:function (e){
-                        console.log("Error during Login JSON Call");
-                   }
-            
-            
-            });
-            
-            
-            
-=======
 
+       ajaxCallForLogin(loginJson);
+
+     }
 
      function ajaxCallForLogin(loginJson){
-       grade = 3;
+       grade = 9;
        navigate(grade);
      }
 
@@ -64,5 +28,5 @@
           else if(grade >8 && grade <=12){
             window.location.href = ("index2.html");
           }
->>>>>>> US_7_Login
+
      }
