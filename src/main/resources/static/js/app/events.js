@@ -70,9 +70,16 @@ function deleteNumberDropBoxElement(element){
 }
 
 function updateKeyBoard() {
+    grade = localStorage.getItem("grade");
 
-    keyboard = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '+', '-', 'x', '/'];
-    keyboardClasses = ["number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "operator", "operator", "operator", "operator"];
+    if( grade <= 3 ){ 
+       keyboard = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '+', '-'];
+       keyboardClasses = ["number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "operator", "operator"];
+    }
+    else if( grade >3 && grade<= 8 ){
+        keyboard = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '+', '-','x','%','(',')'];
+        keyboardClasses = ["number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "operator", "operator", "operator", "operator", "operator", "operator"];
+    }
     var numWrapper = document.getElementById("numWrapper");
     numWrapper.innerHTML = "";
     var numberDoc = document.createDocumentFragment();
