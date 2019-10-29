@@ -5,8 +5,9 @@
      
      
        var loginJson = {};
-       loginJson["username"] = userName;
-       loginJson["dob"] = dob;
+       loginJson["studentId"] = userName;
+       loginJson["dateOfBirth"] = dob;
+       loginJson["name"] = "none";
 
        ajaxCallForLogin(loginJson);
 
@@ -14,6 +15,15 @@
 
      function ajaxCallForLogin(loginJson){
        grade = 9;
+
+
+      $.ajax({url: "http://localhost:8080/sandbox/login", 
+       
+       success: function(result){
+           console.log(result);
+       }
+    
+      });
        navigate(grade);
      }
 
