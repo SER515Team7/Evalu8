@@ -15,9 +15,18 @@
 
 
      function ajaxCallForLogin(loginJson){
-       grade = 3;
-       navigate(grade);
-     }
+      grade = 9;
+
+
+     $.ajax({url: "http://localhost:8080/sandbox/login", 
+      
+      success: function(result){
+          console.log(result);
+      }
+   
+     });
+      navigate(grade);
+    }
 
      function navigate(grade){
           localStorage.setItem("grade",grade);
