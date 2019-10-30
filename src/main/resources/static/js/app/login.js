@@ -18,8 +18,9 @@
       grade = 9;
 
 
-     $.ajax({url: "http://localhost:8080/sandbox/login", 
-      
+     $.ajax({
+       url: "http://localhost:8080/sandbox/login", 
+      data:loginJson,
       success: function(result){
           console.log(result);
       }
