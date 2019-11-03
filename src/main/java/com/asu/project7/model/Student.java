@@ -1,8 +1,13 @@
 package com.asu.project7.model;
 
+/*
+ *@author Ashutosh Dey
+ */
 import javax.persistence.*;
 
+/*This entity class defines the structure of the Student object*/
 @Entity
+/*This annotation will automatically create the required table in the the DB specified in application.properties*/
 @Table(name="student")
 public class Student {
 

@@ -17,6 +17,7 @@ public class SandboxService {
     private StudentRepository studentRepository;
 
 
+    /*This method is for the verification of the login credentials*/
     public ResponseEntity<Student> verifyLogin(Student student) {
 
         System.out.println(student.getStudentId());
@@ -46,6 +47,7 @@ public class SandboxService {
         return loginResult;
     }
 
+    /*This method is for the creation of a new student record*/
     public void addStudent(Student student) {
         Student student_after_add = this.studentRepository.save(student);
         if (student.getStudentId() == student_after_add.getStudentId()) {
