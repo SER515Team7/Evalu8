@@ -1,37 +1,48 @@
 <html>
-  <link href='https://fonts.googleapis.com/css?family=Verdana' rel='stylesheet'>
-  <link href='css/login.css' rel='stylesheet'>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  
-  <div>
-     <div class="bookWrapper">
+
+<link href='https://fonts.googleapis.com/css?family=Verdana' rel='stylesheet'>
+<link href='css/login.css' rel='stylesheet'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Verdana' rel='stylesheet'>
+<link href='css/login.css' rel='stylesheet'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+
+
+
+<div>
+    <div class="bookWrapper">
         <div class="book">
-           <div>
-              <span class="page turn"></span>
-              <span class="page turn"></span>
-              <span class="page turn"></span>
-              <span class="page turn"></span>
-              <span class="page turn"></span>
-              <span class="page turn"></span>
-              <span class="cover"></span>
-              <span class="page"></span>
-              <span class="cover turn"></span>
-           </div>
+            <div>
+                <span class="page turn"></span>
+                <span class="page turn"></span>
+                <span class="page turn"></span>
+                <span class="page turn"></span>
+                <span class="page turn"></span>
+                <span class="page turn"></span>
+                <span class="cover"></span>
+                <span class="page"></span>
+                <span class="cover turn"></span>
+            </div>
         </div>
-     </div>
-     <div class="loginWrapper">
+
+    </div>
+    <div class="loginWrapper">
         <div>
-           <div class="container">
-              <label for="userName"><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" id ="userName" required>
-              <label for="dob"><b>Date of birth</b></label>
-              <input type="text" placeholder="12-04-1997" id="dob" required>
-              <button  onclick="validateLogin()">Login</button>
-              <span id="errorMessage">
-              </span>
-           </div>
+            <div class="container">
+                <label for="userName"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" id="userName" required>
+                <label for="dob"><b>Date of birth</b></label>
+                <input type="text" placeholder="12-04-1997" id="dob" required>
+                <button onclick="validateLogin()">Login</button>
+                <span id="errorMessage"></span>
+            </div>
         </div>
-     </div>
-  </div>
-  <script src="js/app/login.js"> </script>
+    </div>
+</div>
+
+
+<script src="js/app/login.js"> </script>
 </html>
