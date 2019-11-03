@@ -1,18 +1,3 @@
- document.getElementById("errorMessage").style.display="none";
-     function validateLogin(){
-       userName = document.getElementById("userName").value;
-       dob  = document.getElementById("dob").value;
-     
-     
-       var loginJson = {};
-       loginJson["studentId"] = userName;
-       loginJson["dateOfBirth"] = dob;
-       loginJson["name"] = "none";
-
-       ajaxCallForLogin(loginJson);
-
-     }
-
 
 document.getElementById("errorMessage").style.display = "none";
 
@@ -32,7 +17,7 @@ function validateLogin() {
 
 
 function ajaxCallForLogin(loginJson) {
-    grade = 3;
+
     document.getElementById("errorMessage").style.display ="none";
     myJson = JSON.stringify(loginJson);
     urlLink = "http://localhost:8080/sandbox/login/" + myJson;
@@ -68,5 +53,7 @@ function navigate(grade) {
     } else if (grade > 8 && grade <= 12) {
         window.location.href = ("index2.html");
     }
+
+
 }
 

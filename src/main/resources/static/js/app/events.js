@@ -1,5 +1,6 @@
 var dragId = 14;
 var start = 0;
+
 function allowDrop(ev) {
     ev.preventDefault();
 
@@ -11,7 +12,6 @@ function drag(ev) {
 }
 
 
-
 function drop(ev) {
     var elementId = ev.srcElement.getAttribute("id");
     var data = ev.dataTransfer.getData("text");
@@ -20,10 +20,8 @@ function drop(ev) {
         ev.preventDefault();
 
 
-
         element.style.margin = 0;
         ev.target.appendChild(element);
-
 
 
         var gameScreen = document.getElementById("exp");
@@ -42,12 +40,9 @@ function drop(ev) {
             document.getElementById("exp").appendChild(doc);
 
 
-
-
             updateKeyBoard();
 
         }
-
 
 
     }
@@ -61,9 +56,7 @@ function drop(ev) {
 }
 
 
-
-
-function deleteNumberDropBoxElement(element){
+function deleteNumberDropBoxElement(element) {
     var parentNode = element.parentNode;
     parentNode.removeChild(element);
     parentNode.parentNode.removeChild(parentNode);
@@ -72,12 +65,11 @@ function deleteNumberDropBoxElement(element){
 function updateKeyBoard() {
     grade = localStorage.getItem("grade");
 
-    if( grade <= 3 ){ 
-       keyboard = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '+', '-'];
-       keyboardClasses = ["number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "operator", "operator"];
-    }
-    else if( grade >3 && grade<= 8 ){
-        keyboard = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '+', '-','x','%','(',')'];
+    if (grade <= 3) {
+        keyboard = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '+', '-'];
+        keyboardClasses = ["number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "operator", "operator"];
+    } else if (grade > 3 && grade <= 8) {
+        keyboard = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '+', '-', 'x', '%', '(', ')'];
         keyboardClasses = ["number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "operator", "operator", "operator", "operator", "operator", "operator"];
     }
     var numWrapper = document.getElementById("numWrapper");
@@ -85,10 +77,9 @@ function updateKeyBoard() {
     var numberDoc = document.createDocumentFragment();
     start = dragId;
 
-    $("#numWrapper").append( "<div id='deleteElement' class='dropBox deleteDropBox'ondrop='drop(event)' ondragover='allowDrop(event)'></div> <div class='save'> </div>");
+    $("#numWrapper").append("<div id='deleteElement' class='dropBox deleteDropBox'ondrop='drop(event)' ondragover='allowDrop(event)'></div> <div class='save'> </div>");
 
     for (var i = 0; i < keyboard.length; i++) {
-
 
 
         var numberDiv = document.createElement("div");
