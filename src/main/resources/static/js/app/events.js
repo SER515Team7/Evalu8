@@ -10,6 +10,19 @@ function drag(ev) {
 
 }
 
+function getExpression(){
+    var builtExp ="";
+    var expression = document.getElementById("exp").childNodes;
+    for(i=0; i<expression.length; i++){
+        if(expression[i].nodeName != "#text"){
+        var child = expression[i];
+        var text = child.getElementsByClassName("numberOperatorText")[0];
+        
+        }
+         
+    }
+    dbCallForExpressionValidation(builtExp);
+}
 
 
 function drop(ev) {
@@ -58,6 +71,7 @@ function drop(ev) {
 
 
     }
+    getExpression();
 }
 
 
