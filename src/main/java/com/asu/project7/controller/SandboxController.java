@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class SandboxController {
 
-    @Autowired
-    private StudentRepository studentRepository;
+    /*@Autowired
+    private StudentRepository studentRepository;*/
     @Autowired
     SandboxService sandboxService;
 
