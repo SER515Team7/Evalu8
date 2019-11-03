@@ -1,3 +1,5 @@
+/*This is a SQL file to store the important queries which may be used only for testing purposes by any developer*/
+
 create database student;
 use student;
 
@@ -8,7 +10,7 @@ dateOfBirth VARCHAR(12) NOT NULL,
 PRIMARY KEY (studentId)
 );
 
-insert into student(name, dateOfBirth) values ("Ashutosh", "01-21-1993");
-insert into student(name, dateOfBirth) values ("Prakhar", "08-31-1997");
+/*insert into student(name, dateOfBirth) values ("Ashutosh", "01-21-1993");
+insert into student(name, dateOfBirth) values ("Prakhar", "08-31-1997");*/
 
 Select * from student;
