@@ -1,16 +1,25 @@
 var dragId = 14;
 var start = 0;
-
+ /*
+  This function allows draggable object to be dropped
+ */
 function allowDrop(ev) {
     ev.preventDefault();
 
 }
 
+/*
+  This function allows object to be dragged
+ */
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 
 }
 
+
+/*
+  This function  is to create the expression from div elements dropped by the user
+ */
 function getExpression(){
     var builtExp ="";
     var expression = document.getElementById("exp").childNodes;
@@ -39,7 +48,9 @@ function getExpression(){
     dbCallForExpressionValidation(builtExp);
 }
 
-
+/*
+  This function  is to database call to validate the expression created and print the result
+ */
 
 function dbCallForExpressionValidation(exp){
 
@@ -72,7 +83,9 @@ function dbCallForExpressionValidation(exp){
 }
 
 
-
+/*
+  This function  is to drop the dragged objects and perform a reiteration of button section
+ */
 function drop(ev) {
     var elementId = ev.srcElement.getAttribute("id");
     var data = ev.dataTransfer.getData("text");
@@ -118,12 +131,19 @@ function drop(ev) {
 }
 
 
+/*
+  This function  is to delete the objects dropped
+ */
+
 function deleteNumberDropBoxElement(element) {
     var parentNode = element.parentNode;
     parentNode.removeChild(element);
     parentNode.parentNode.removeChild(parentNode);
 }
 
+/*
+  This function  is to update the button section depending on the user interface
+ */
 function updateKeyBoard() {
     grade = localStorage.getItem("grade");
 

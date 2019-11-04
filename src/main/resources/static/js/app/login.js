@@ -1,6 +1,8 @@
 
 document.getElementById("errorMessage").style.display = "none";
-
+/*
+  This function  is to  validate the login page
+ */
 function validateLogin() {
     userName = document.getElementById("userName").value;
     dob = document.getElementById("dob").value;
@@ -15,7 +17,9 @@ function validateLogin() {
 
 }
 
-
+/*
+  This function  is to database call to check for authentication
+ */
 function ajaxCallForLogin(loginJson) {
 
     document.getElementById("errorMessage").style.display ="none";
@@ -43,6 +47,9 @@ function ajaxCallForLogin(loginJson) {
     });
 
 }
+/*
+  This function  is to nvaugate to differen pages depending on the grades
+ */
 
 function navigate(grade) {
     localStorage.setItem("grade", grade);
