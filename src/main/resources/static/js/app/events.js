@@ -59,7 +59,7 @@ function dbCallForExpressionValidation(exp){
             if (result['status'] != 404) {
                  document.getElementById("result").innerHTML = result["result"][0];
             } else {
-
+                 document.getElementById("result").innerHTML = "Invalid Expression"; 
             }
         },
         error: function (result) {
