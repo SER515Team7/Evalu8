@@ -1,17 +1,91 @@
 var dragId = 14;
 var start = 0;
+ /*
+  This function allows draggable object to be dropped
+ */
 function allowDrop(ev) {
     ev.preventDefault();
 
 }
 
+/*
+  This function allows object to be dragged
+ */
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 
 }
 
 
+/*
+  This function  is to create the expression from div elements dropped by the user
+ */
+function getExpression(){
+    var builtExp ="";
+    var expression = document.getElementById("exp").childNodes;
+    for(i=0; i<expression.length; i++){
+        if(expression[i].nodeName != "#text"){
+        var child = expression[i];
+        var text = child.getElementsByClassName("numberOperatorText")[0];
 
+             if(text != undefined){
+                if(text.innerHTML.replace(" ","") == "x"){
+                    builtExp += "*";
+                    console.log("+ here");
+
+                }
+                else{
+                    builtExp += (text.innerHTML);
+                    console.log(text.innerHTML);
+
+                }
+            }
+
+
+        }
+         
+    }
+    dbCallForExpressionValidation(builtExp);
+}
+
+/*
+  This function  is to database call to validate the expression created and print the result
+ */
+
+function dbCallForExpressionValidation(exp){
+
+    expJson ={}
+    expJson["expression"] = exp.replace(" ","");
+
+      console.log(expJson);
+
+
+
+    $.ajax({
+        url: "http://localhost:8080/sandbox/validate/",
+        data: expJson,
+        success: function (result) {
+            console.log(result);
+
+            if (result['status'] != 404) {
+                 document.getElementById("result").innerHTML = result["result"][0];
+            } else {
+                 document.getElementById("result").innerHTML = "Invalid Expression"; 
+            }
+        },
+        error: function (result) {
+
+        }
+
+    });
+
+
+}
+
+
+/*
+  This function  is to drop the dragged objects and perform a reiteration of button section
+ */
 function drop(ev) {
     var elementId = ev.srcElement.getAttribute("id");
     var data = ev.dataTransfer.getData("text");
@@ -20,10 +94,8 @@ function drop(ev) {
         ev.preventDefault();
 
 
-
         element.style.margin = 0;
         ev.target.appendChild(element);
-
 
 
         var gameScreen = document.getElementById("exp");
@@ -42,12 +114,9 @@ function drop(ev) {
             document.getElementById("exp").appendChild(doc);
 
 
-
-
             updateKeyBoard();
 
         }
-
 
 
     }
@@ -58,30 +127,41 @@ function drop(ev) {
 
 
     }
+    getExpression();
 }
 
 
+/*
+  This function  is to delete the objects dropped
+ */
 
-
-function deleteNumberDropBoxElement(element){
+function deleteNumberDropBoxElement(element) {
     var parentNode = element.parentNode;
     parentNode.removeChild(element);
     parentNode.parentNode.removeChild(parentNode);
 }
 
+/*
+  This function  is to update the button section depending on the user interface
+ */
 function updateKeyBoard() {
+    grade = localStorage.getItem("grade");
 
-    keyboard = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '+', '-', 'x', '/'];
-    keyboardClasses = ["number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "operator", "operator", "operator", "operator"];
+    if (grade <= 3) {
+        keyboard = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '+', '-'];
+        keyboardClasses = ["number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "operator", "operator"];
+    } else if (grade > 3 && grade <= 8) {
+        keyboard = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '+', '-', 'x', '%', '(', ')'];
+        keyboardClasses = ["number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "operator", "operator", "operator", "operator", "operator", "operator"];
+    }
     var numWrapper = document.getElementById("numWrapper");
     numWrapper.innerHTML = "";
     var numberDoc = document.createDocumentFragment();
     start = dragId;
 
-    $("#numWrapper").append( "<div id='deleteElement' class='dropBox deleteDropBox'ondrop='drop(event)' ondragover='allowDrop(event)'></div> <div class='save'> </div>");
+    $("#numWrapper").append("<div id='deleteElement' class='dropBox deleteDropBox'ondrop='drop(event)' ondragover='allowDrop(event)'></div> <div class='save'> </div>");
 
     for (var i = 0; i < keyboard.length; i++) {
-
 
 
         var numberDiv = document.createElement("div");
