@@ -40,7 +40,7 @@ function getExpression(){
 }
 
 
-
+//validation
 function dbCallForExpressionValidation(exp){
 
     expJson ={}
@@ -79,16 +79,13 @@ function drop(ev) {
     var element = document.getElementById(data);
     if (elementId != "deleteElement") {
         ev.preventDefault();
-
-
         element.style.margin = 0;
         ev.target.appendChild(element);
-
-
         var gameScreen = document.getElementById("exp");
         var children = gameScreen.childNodes.length + 1;
-
-
+   
+        //start
+       
         if (parseInt(element.getAttribute("id")) >= start) {
             var doc = document.createDocumentFragment();
             var div = document.createElement("div");
@@ -140,28 +137,18 @@ function updateKeyBoard() {
     start = dragId;
 
     $("#numWrapper").append("<div id='deleteElement' class='dropBox deleteDropBox'ondrop='drop(event)' ondragover='allowDrop(event)'></div> <div class='save'> </div>");
-
     for (var i = 0; i < keyboard.length; i++) {
-
-
         var numberDiv = document.createElement("div");
-
         numberDiv.setAttribute("id", dragId);
         numberDiv.setAttribute("draggable", "true");
         numberDiv.setAttribute("ondragstart", "drag(event)");
-
         var span = document.createElement("span");
         span.setAttribute("class", "numberOperatorText");
-
         numberDiv.setAttribute("class", keyboardClasses[i] + " flexCommon");
         span.appendChild(document.createTextNode(keyboard[i]));
-
         numberDiv.appendChild(span);
         dragId = dragId + 1;
         numberDoc.appendChild(numberDiv);
-
     }
-
     numWrapper.appendChild(numberDoc);
-
 }
