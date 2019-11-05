@@ -27,6 +27,7 @@ insert into student(student_id, date_of_birth, name, grade) values (345, "08-14-
 insert into student(student_id, date_of_birth, name, grade) VALUES (455, "07-25-1997", "Mayank", 06);
 
 Step 4 - Run as Spring Boot application
+
 Step 5 - Open - localhost:8080/login.html in Google Chrome
 
 Now you have the application running with two registered students for whom the username will be ‘345’ and ‘455’ which can be used for login and performing calculations.
