@@ -1,5 +1,11 @@
 # Evalu8
 
+Prerequisite
+
+Install mysql in your system and set your email ID and Password.
+
+
+
 Step 1 - Clone the Project and Import it to Eclipse/IntelliJ
 Step 2 - Update your application.properties file with the following details :
 
