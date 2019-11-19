@@ -22,7 +22,7 @@ public class SandboxController {
     SandboxService sandboxService;
 
     /*This method is for the verification of the login credentials*/
-    /*@RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ResponseEntity<Student> verifyLogin(@RequestParam int studentId) {
 
         System.out.println("Received studentId:" + studentId);
@@ -31,13 +31,13 @@ public class SandboxController {
 //        ResponseEntity<Student> x = this.sandboxService.verifyLogin(student);
 //        System.out.println(x.toString());
         return this.sandboxService.verifyLogin(student);
-    }*/
+    }
 
     /*This method is for the creation of a new student record*/
-    /*@RequestMapping(value = "/addStudent", method = RequestMethod.POST)
+    @RequestMapping(value = "/addStudent", method = RequestMethod.POST)
     public void addStudent(@RequestBody Student student) {
         this.sandboxService.addStudent(student);
-    }*/
+    }
 
     @RequestMapping(value="/validate")
     public ExpressionDTO validateExpression(@RequestParam String expression){

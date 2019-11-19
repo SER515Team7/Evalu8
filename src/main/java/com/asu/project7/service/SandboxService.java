@@ -44,15 +44,15 @@ public class SandboxService {
     }
 
     /*This method is for the creation of a new student record*/
-    /*public void addStudent(Student student) {
+    public void addStudent(Student student) {
         Student student_after_add = this.studentRepository.save(student);
         if (student.getStudentId() == student_after_add.getStudentId()) {
             System.out.println("Student with ID:" + student_after_add.getStudentId() + " created successfully!");
         }
-    }*/
+    }
 
     /*This method is for the verification of the login credentials*/
-    /*public ResponseEntity<Student> verifyLogin(Student student) {
+    public ResponseEntity<Student> verifyLogin(Student student) {
 
         System.out.println(student.getStudentId());
         ResponseEntity<Student> loginResult = null;
@@ -73,11 +73,11 @@ public class SandboxService {
                 return loginResult;
             }
 
-            *//*System.out.println("Name "+byId.get().getName());*//*
+            /*System.out.println("Name "+byId.get().getName());*/
 
 
         }
 
         return loginResult;
-    }*/
+    }
 }
