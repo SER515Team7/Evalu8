@@ -1,6 +1,6 @@
 package com.asu.project7.service;
 
-import com.asu.project7.model.AddAssignment;
+import com.asu.project7.model.Assignment;
 import com.asu.project7.model.Questions;
 import com.asu.project7.model.Quiz;
 import com.asu.project7.repository.QuestionRepository;
@@ -16,8 +16,9 @@ public class AddAssignmentService {
     @Autowired
     private QuestionRepository questionRepository;
 
-    public void addAssignment(AddAssignment assignment) {
+    public void addAssignment(Assignment assignment) {
 
+        /*Testing the received assignment details*/
         System.out.println(assignment.getGrade());
         System.out.println(assignment.getQuizName());
 
@@ -26,6 +27,8 @@ public class AddAssignmentService {
             System.out.println(question.getAnswerData());
             System.out.println(question.getMarks());
         }
+
+        /*Separating the quiz details and assignment details*/
 
         /*Saving the quiz details to the DB*/
         Quiz createQuiz = new Quiz();

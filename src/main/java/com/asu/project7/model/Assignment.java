@@ -2,7 +2,7 @@ package com.asu.project7.model;
 
 import java.util.Collection;
 
-public class AddAssignment {
+public class Assignment {
     private String quizName;
     private int grade;
     private Collection<Questions> questionsList;
