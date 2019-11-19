@@ -1,0 +1,89 @@
+<html>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Verdana' rel='stylesheet'>
+<!------ Include the above in your HEAD tag ---------->
+
+    
+    
+<body>
+    
+<div class="assignmentwrapper" style="font-size: 17px">      
+  
+<div class="container" style="font-family: Verdana;font-size: 17px">
+   <div class="display-quiz-header" style="display: flex;align-items: center;justify-content: center;flex-direction: column">
+    <div class="row" style="width: 50%">
+      <div class="col-25">
+        <label style="font-size: 17px" for="fname">Quiz Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="qname" name="quizname" placeholder="Solve the Computation">
+      </div>
+    </div>
+    <div class="row" style="width: 50%">
+      <div class="col-25">
+        <label style="font-size: 17px" for="lname">Quiz ID</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="qid" name="quizId" placeholder="100">
+      </div>
+    </div>
+    <div class="row" style="width: 50%">
+      <div class="col-25">
+        <label style="font-size: 17px"  for="lname">Grade</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="qgrade" name="grade" placeholder="3">
+      </div>
+    </div>   
+       
+       
+    </div>
+
+
+    
+    
+
+
+    <table id="myTable" class=" table order-list" style="margin-top: 50px;">
+    <thead>
+        <tr style="font-size: 17px">
+            <td>Question</td>
+            <td>Answer</td>
+            <td>Marks</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="col-sm-4">
+                <input type="text" name="question" class="form-control" />
+            </td>
+            <td class="col-sm-4">
+                <input type="mail" name="answer"  class="form-control"/>
+            </td>
+            <td class="col-sm-3">
+                <input type="text" name="marks"  class="form-control"/>
+            </td>
+            <td class="col-sm-2"><a class="deleteRow"></a>
+
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5" style="text-align: left;">
+                <input type="button" class="btn btn-lg btn-block " id="addrow" value="Add Row" />
+            </td>
+        </tr>
+        <tr>
+        </tr>
+    </tfoot>
+</table>
+</div>
+    
+    
+</div>      
+</body>
+
+</html>
