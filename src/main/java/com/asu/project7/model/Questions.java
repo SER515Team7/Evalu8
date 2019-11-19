@@ -16,6 +16,8 @@ public class Questions {
     private int questionId;
     private int quizId;
     private String questionData;
+    private String answerData;
+    private int marks;
 
     public int getQuestionId() {
         return questionId;
@@ -57,6 +59,5 @@ public class Questions {
         this.marks = marks;
     }
 
-    private String answerData;
-    private int marks;
+
 }

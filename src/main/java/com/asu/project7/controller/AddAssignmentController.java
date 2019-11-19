@@ -1,5 +1,6 @@
 package com.asu.project7.controller;
 
+import com.asu.project7.model.AddAssignment;
 import com.asu.project7.service.AddAssignmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,8 +15,8 @@ public class AddAssignmentController {
     AddAssignmentService addAssignmentService;
 
     @RequestMapping(value = "/addAssign", method = RequestMethod.POST)
-    public void addAssignment(@RequestBody String string) {
-        this.addAssignmentService.addAssignment(string);
+    public void addAssignment(@RequestBody AddAssignment assignment) {
+        this.addAssignmentService.addAssignment(assignment);
 
     }
 

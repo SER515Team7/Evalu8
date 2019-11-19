@@ -1,11 +1,11 @@
 package com.asu.project7.model;
 
-import java.util.ArrayList;
+import java.util.Collection;
 
 public class AddAssignment {
     private String quizName;
     private int grade;
-    private ArrayList<Questions> questionsList;
+    private Collection<Questions> questionsList;
 
     public String getQuizName() {
         return quizName;
@@ -23,11 +23,11 @@ public class AddAssignment {
         this.grade = grade;
     }
 
-    public ArrayList<Questions> getQuestionsList() {
+    public Collection<Questions> getQuestionsList() {
         return questionsList;
     }
 
-    public void setQuestionsList(ArrayList<Questions> questionsList) {
+    public void setQuestionsList(Collection<Questions> questionsList) {
         this.questionsList = questionsList;
     }
 }
