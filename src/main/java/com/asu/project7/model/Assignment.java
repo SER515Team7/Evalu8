@@ -7,7 +7,16 @@ import java.util.Collection;
 public class Assignment {
     private String quizName;
     private int grade;
+    private int quizId;
     private Collection<Questions> questionsList;
+
+    public int getQuizId() {
+        return quizId;
+    }
+
+    public void setQuizId(int quizId) {
+        this.quizId = quizId;
+    }
 
     public String getQuizName() {
         return quizName;
