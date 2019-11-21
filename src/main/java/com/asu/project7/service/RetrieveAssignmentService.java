@@ -4,14 +4,32 @@ package com.asu.project7.service;
  */
 
 import com.asu.project7.model.Assignment;
-import org.springframework.http.ResponseEntity;
+import com.asu.project7.model.Questions;
+import com.asu.project7.model.Quiz;
+import com.asu.project7.repository.QuestionRepository;
+import com.asu.project7.repository.QuizRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.*;
 
 @Service
 public class RetrieveAssignmentService {
+    @Autowired
+    private QuizRepository quizRepository;
+    @Autowired
+    private QuestionRepository questionRepository;
 
-    public ResponseEntity<Assignment> retrieveAssignment(Assignment assignment) {
+    public Collection<Assignment> retrieveAssignment(int gradeQuizDetails) {
 
-        return null;
+
+        Iterable<Quiz> quizDetails = this.quizRepository.findAll();
+        Iterable<Questions> questionDetails = this.questionRepository.findAll();
+        List<Assignment> assignmentList = new ArrayList<>();
+        Map<Integer, List<Questions>> questionsList = new HashMap<>();
+//        Collection<Assignment> assign=assignmentList;
+
+//        System.out.println(assignmentList.toArray());
+        return assignmentList;
     }
 }
