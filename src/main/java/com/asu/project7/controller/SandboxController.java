@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/sandbox")
 public class SandboxController {
 
-    /* @Autowired
-     private StudentRepository studentRepository;*/
     @Autowired
     SandboxService sandboxService;
 
