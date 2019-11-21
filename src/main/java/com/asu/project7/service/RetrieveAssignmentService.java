@@ -29,6 +29,20 @@ public class RetrieveAssignmentService {
         Map<Integer, List<Questions>> questionsList = new HashMap<>();
 //        Collection<Assignment> assign=assignmentList;
 
+
+        for (Questions eachQuestion : questionDetails) {
+            if (questionsList.containsKey(eachQuestion.getQuizId())) {
+                questionsList.get(eachQuestion.getQuizId()).add(eachQuestion);
+            } else {
+                List<Questions> eachQuestionList = new ArrayList<Questions>();
+                eachQuestionList.add(eachQuestion);
+                questionsList.put(eachQuestion.getQuizId(), eachQuestionList);
+            }
+        }
+
+
+
+
 //        System.out.println(assignmentList.toArray());
         return assignmentList;
     }
