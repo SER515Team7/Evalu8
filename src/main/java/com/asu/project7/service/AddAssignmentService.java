@@ -2,6 +2,7 @@ package com.asu.project7.service;
 /*
  *@author Ashutosh Dey
  */
+
 import com.asu.project7.model.Assignment;
 import com.asu.project7.model.Questions;
 import com.asu.project7.model.Quiz;
@@ -37,7 +38,7 @@ public class AddAssignmentService {
         createQuiz.setGrade(assignment.getGrade());
         createQuiz.setQuizName(assignment.getQuizName());
         Quiz createQuiz_after_add = this.quizRepository.save(createQuiz);
-
+        System.out.println("Quiz Details with ID:" + createQuiz_after_add.getQuizId() + " created successfully.");
         /*Saving the question details to the DB*/
         Questions addQuestions;
         for (Questions eachQuestion : assignment.getQuestionsList()) {
@@ -46,7 +47,9 @@ public class AddAssignmentService {
             addQuestions.setAnswerData(eachQuestion.getAnswerData());
             addQuestions.setMarks(eachQuestion.getMarks());
             addQuestions.setQuizId(createQuiz_after_add.getQuizId());
-            this.questionRepository.save(addQuestions);
+            Questions questions_after_add = this.questionRepository.save(addQuestions);
+            System.out.println("Question Details with ID:" + questions_after_add.getQuestionId() + " created successfully.");
+
         }
 
     }
