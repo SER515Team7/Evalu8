@@ -41,6 +41,18 @@ public class RetrieveAssignmentService {
         }
 
 
+        for (Quiz eachQuiz : quizDetails) {
+            if (eachQuiz.getGrade() == gradeQuizDetails) {
+                Assignment eachAssignment = new Assignment();
+                eachAssignment.setGrade(eachQuiz.getGrade());
+                eachAssignment.setQuizId(eachQuiz.getQuizId());
+                eachAssignment.setQuizName(eachQuiz.getQuizName());
+
+                eachAssignment.setQuestionsList(questionsList.get(eachQuiz.getQuizId()));
+                assignmentList.add(eachAssignment);
+            }
+
+        }
 
 
 //        System.out.println(assignmentList.toArray());
