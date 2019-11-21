@@ -1,13 +1,11 @@
 package com.asu.project7.controller;
 
 import com.asu.project7.dto.ExpressionDTO;
-
-import com.asu.project7.model.Student;
-import com.asu.project7.repository.StudentRepository;
 import com.asu.project7.service.SandboxService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 
 /*This is the controller class that will handle all the REST requests*/
@@ -16,8 +14,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/sandbox")
 public class SandboxController {
 
-   /* @Autowired
-    private StudentRepository studentRepository;*/
+    /* @Autowired
+     private StudentRepository studentRepository;*/
     @Autowired
     SandboxService sandboxService;
 
@@ -39,12 +37,12 @@ public class SandboxController {
         this.sandboxService.addStudent(student);
     }*/
 
-    @RequestMapping(value="/validate")
-    public ExpressionDTO validateExpression(@RequestParam String expression){
-        ExpressionDTO expressionDTO = new ExpressionDTO();
+    @RequestMapping(value = "/validate")
+    public ExpressionDTO validateExpression(@RequestParam String expression) {
+        ExpressionDTO expressionDTO;
 
-        expressionDTO=sandboxService.validateExpression(expression);
+        expressionDTO = sandboxService.validateExpression(expression);
 
-        return  expressionDTO;
+        return expressionDTO;
     }
 }
