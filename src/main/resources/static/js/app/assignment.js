@@ -25,6 +25,59 @@ document.getElementById("status").style.display = "none";
 
 
 
+// onlcick of submit button by the instructor the json will be constructed fromt he dic elements   
+$("#submit").on("click", function (){
+
+        root= {};
+       
+        root["quizName"] = document.getElementById("qname").value;
+        root["grade"] = document.getElementById("qgrade").value;
+        root["subject"] = document.getElementById("qsubject").value;
+
+        var childNodes = document.getElementById("myTable").getElementsByTagName("tr");
+      
+        inc =0;
+        for(var i = 0; i< childNodes.length; i++){
+
+          if(typeof childNodes[i] != "undefined"){
+          var td = childNodes[i].getElementsByTagName("td");
+          obj = {};
+          for(var j=0; j<td.length; j++){
+            if(typeof td[j] != "undefined"){
+                    var input = td[j].getElementsByTagName("input");
+                    for(var k=0; k< input.length; k++){
+                        if(input[k].type == "text"){
+                          var val = input[k].value;
+
+                          if( j == 0){
+                              obj["question"] = val;
+                          }
+                          else if( j == 1){
+                              obj["answer"] = val;
+                          }
+                          else if( j == 2){
+                              obj["marks"] = val;
+                          }
+                        }
+                    }
+            }
+        
+        }
+        
+      }//row
+            if(Object.keys(obj).length > 0){
+                root[inc] = obj;
+                inc += 1;
+            }
+        }
+     dbCallToCreateNewAssignment(root);
+
+
+    });
+
+
+
+
 
 
     // database call to create new assignment the constructed json will be sent via rest
