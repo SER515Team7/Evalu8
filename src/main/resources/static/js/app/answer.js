@@ -59,7 +59,11 @@ function next(){
     console.log(questionsList);
 
     if(index < questionsList.length){
-
+        getAnswer();
+        document.getElementById("exp").innerHTML = "";
+        $(exp).append("<div id='div1' class='dropBox gameScreenDropBox' ondrop='drop(event)' ondragover='allowDrop(event)''></div>");
+        document.getElementById("question").innerHTML = questionsList[index]["questionData"];
+        original.push(questionsList[index]["answerData"]);
 
     }
     else if(!found){
