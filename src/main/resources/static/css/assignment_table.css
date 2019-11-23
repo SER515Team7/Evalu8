@@ -19,4 +19,22 @@
          font-size: 50px;
          font-family: 'verdana';
          }
+
+         td, th {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 25px;
+            font-size: 20px;
+            font-family: Verdana;
+            }
+            tr:nth-child(even) {
+            background-color: #dddddd;
+            }
+            /* Button to start the quiz */
+            .takeQuiz{
+            width:30%;height: 5px; font-size: 20px;cursor: pointer;
+            }
+            .takeQuizText{
+            font-family: Verdana;color: blue;
+            }
          
