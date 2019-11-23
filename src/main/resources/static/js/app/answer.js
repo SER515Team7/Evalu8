@@ -51,3 +51,20 @@ function getAnswer(){
 
 
 }
+
+// To loop through the questions that has been retrieved for the particular quiz
+found = false;
+function next(){
+
+    console.log(questionsList);
+
+    if(index < questionsList.length){
+
+
+    }
+    else if(!found){
+
+    }
+    index = index + 1;
+
+}
