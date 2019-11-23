@@ -67,7 +67,20 @@ function next(){
 
     }
     else if(!found){
+        found =true;
+        getAnswer();
+        document.getElementById("exp").innerHTML = "";
+        document.getElementById("question").innerHTML="Result";
+        for(var i=0; i<ans.length; i++){
+            if (ans[i] == original[i-1]){
+                result = result + 1;
+            }
+        }
+        console.log(result);
+        console.log(ans);
+        console.log(original);
 
+        document.getElementById("numberText").innerHTML = (result).toString() +"/"+ (ans.length-1).toString();
     }
     index = index + 1;
 
