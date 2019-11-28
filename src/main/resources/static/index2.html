@@ -1,82 +1,39 @@
 <html>
-      <!–– 
-      Header section to include all the reference URI
-     -->
-   <head>    
-       <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
-       <link href='../css/styles.css' rel='stylesheet'>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      
-   </head> 
-   <body>
-         
-         <!–– 
-         Result Section
-         -->
+<!––
+Button section
+-->
+<div class="keyboard flexCommon">
 
-      <div class="flexCommon gameDeleteScoreSaveWrapper">
-               <div class="resultText">
-                     Result 
-               </div>   
-               <div id="answer"> 
-               <span id="result">567</span>
-               </div>
-                
-      </div>
-      <!–– 
-      Button section
-      -->
+
+    <div id="numWrapper" class="numberWrapper">
+
+        <div id="10"  draggable="true" ondragstart="drag(event)" class="operator flexCommon"><span class="numberOperatorText">+</span></div>
+        <div id="11"  draggable="true" ondragstart="drag(event)" class="operator flexCommon"><span class="numberOperatorText">-</span></div>
+        <div id="12"  draggable="true" ondragstart="drag(event)" class="operator flexCommon"><span class="numberOperatorText">*</span></div>
+        <div id="13"  draggable="true" ondragstart="drag(event)" class="operator flexCommon"><span class="numberOperatorText">/</span></div>
+
+        <div id="15"  draggable="true" ondragstart="drag(event)" class="operator flexCommon"><span class="numberOperatorText">%</span></div>
+
+
         
-      <div class="keyboard flexCommon">
-            
-         
-               <div id="numWrapper" class="numberWrapper">  
-                  <div  id="0"  draggable="true" ondragstart="drag(event)" class="number flexCommon"><span class="numberOperatorText"> 0</span></div>
-                  <div id="1"  draggable="true" ondragstart="drag(event)"class="number flexCommon"><span class="numberOperatorText"> 1</span></div>
-                  <div id="2"  draggable="true" ondragstart="drag(event)"class="number flexCommon"><span class="numberOperatorText"> 2</span></div>
-                  <div id="3"  draggable="true" ondragstart="drag(event)"class="number flexCommon"><span class="numberOperatorText"> 3</span></div>
-                  <div id="4"  draggable="true" ondragstart="drag(event)"class="number flexCommon"><span class="numberOperatorText"> 4</span></div>
-                  <div id="5"  draggable="true" ondragstart="drag(event)"class="number flexCommon"><span class="numberOperatorText"> 5</span></div>
-                  <div id="6"  draggable="true" ondragstart="drag(event)" class="number flexCommon"><span class="numberOperatorText"> 6</span></div>
-                  <div id="7"  draggable="true" ondragstart="drag(event)" class="number flexCommon"><span class="numberOperatorText"> 7</span></div>
-                  <div id="8"  draggable="true" ondragstart="drag(event)"class="number flexCommon"><span class="numberOperatorText"> 8</span></div>
-                  <div id="9"  draggable="true" ondragstart="drag(event)"class="number flexCommon"><span class="numberOperatorText"> 9</span></div>
-                  <div id="10"  draggable="true" ondragstart="drag(event)" class="operator flexCommon"><span class="numberOperatorText"> +</span></div>
-                  <div id="11"  draggable="true" ondragstart="drag(event)" class="operator flexCommon"><span class="numberOperatorText"> -</span></div>
-                  <div id="12"  draggable="true" ondragstart="drag(event)" class="operator flexCommon"><span class="numberOperatorText"> x</span></div>
-                  <div id="13"  draggable="true" ondragstart="drag(event)" class="operator flexCommon"><span class="numberOperatorText"> /</span></div>
-                  <div id="14"  draggable="true" ondragstart="drag(event)" class="operator flexCommon"><span class="numberOperatorText"> (</span></div>
-                  <div id="15"  draggable="true" ondragstart="drag(event)" class="operator flexCommon"><span class="numberOperatorText"> )</span></div>
-		  		  <div id="16"  draggable="true" ondragstart="drag(event)" class="full-span operator flexCommon">
-		  		  <span class="numberOperatorText"> sin()</span>
-		  		  </div>
-		  		  <div id="17"  draggable="true" ondragstart="drag(event)" class="full-span operator flexCommon">
-		  		  <span class="numberOperatorText"> cos()</span>
-		  		  </div>
-		  		  <div id="18"  draggable="true" ondragstart="drag(event)" class="full-span operator flexCommon">
-		  		  <span class="numberOperatorText"> tan()</span>
-		  		  </div>
-		  		 <div id="19"  draggable="true" ondragstart="drag(event)" class="full-span operator flexCommon">
-                                  <span class="numberOperatorText"> log </span>
-                                  </div> 	
-		  <!-- New Items that needs to be added after this for higher grade student -->
 
-               </div>
-      </div>
-      <!–– 
-      sand box section
-       -->
-      <div id="gs" class="gameScreen">
-      <div class="gameView flexCommon">
-       
-         <div id="exp" class=" flexCommon expression">
-            <div id="div1" class="dropBox gameScreenDropBox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-         </div>
-      </div>
-     
-      <div class="gameCharacter">
-      </div>
-   </div> 
-    <script src="../js/app/events.js"> </script>
-   </body>  
+        <div id="19"  draggable="true" ondragstart="drag(event)" class="operator flexCommon" style="width:150px;">
+            <input type ="text" style ="font-size: 25px" class="textBox"/>
+        </div>
+
+        <div id="20"  draggable="true" ondragstart="drag(event)" class="operator flexCommon" style="width:150px;"><span class="numberOperatorText" style="font-size: 35px">Sin(</span>
+            <input type ="text" style ="font-size: 25px" class="textBox"/><span style="font-size: 35px" class="numberOperatorText">)</span>
+        </div>
+
+        <div id="21"  draggable="true" ondragstart="drag(event)" class="operator flexCommon" style="width:150px;"><span class="numberOperatorText" style="font-size: 35px">Tan(</span>
+            <input type ="text" style ="font-size: 25px" class="textBox"/><span style="font-size: 35px" class="numberOperatorText">)</span>
+        </div>
+        <div id="22"  draggable="true" ondragstart="drag(event)" class="operator flexCommon" style="width:150px;"><span class="numberOperatorText" style="font-size: 35px">Cos(</span>
+            <input type ="text"  style ="font-size: 25px"class="textBox"/><span style="font-size: 35px" class="numberOperatorText">)</span>
+        </div>
+
+
+
+    </div>
+</div>
 </html>
