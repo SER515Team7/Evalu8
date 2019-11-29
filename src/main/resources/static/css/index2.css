@@ -1,4 +1,25 @@
+    {
+        margin: 0px;
+    }
 
+    /* FLEX COMMON PROPERTY*/
+    .flexCommon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /*  (DELETE / SCORE /SAVE)  WRAPPER START */
+    .gameDeleteScoreSaveWrapper{
+        float: left;
+        width:20%;
+        flex-direction: column;
+        height: 100%;
+    }
+    /*  DROPBOX START*/
+    .dropBox{
+        height:70px;
+        width:140px;
+    }
        #answer{
         height: 60px;
         width: 600px;
@@ -23,7 +44,7 @@
         height: 30%;
     }
 
-
+    
     /* WALL */
     .wall{
         background: brown;
