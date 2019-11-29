@@ -37,3 +37,39 @@
         height: 70px;
         width:70px;
     }
+
+       /*  DROPBOX END*/
+       /*  SAVE */
+       .save{
+           width: 70px;
+           height: 70px;
+           background: url('images/floppy.png') no-repeat;
+           background-size: cover;
+           margin-left: 10px;
+       }
+       /*   (DELETE / SCORE /SAVE)  WRAPPER END */
+       /* kEYBOARD START */
+       .keyboard{
+           float:right;
+           width:20%;
+           height:100%;
+       }
+       /* NUMBER WRAPPER START */
+       .numberWrapper{
+           display:flex;
+           flex-direction: row;
+           flex-flow: wrap;
+           width:160px;
+           align-content: center;
+           background: blue;
+           background:#f1f1f1;
+           cursor: pointer;
+       }
+       /* NUMBER */
+       .number{
+           background:blue;
+           height: 70px;
+           width: 70px;
+           color: white;
+           margin:5px;
+       }
