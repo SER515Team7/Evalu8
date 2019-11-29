@@ -33,6 +33,27 @@
         align-items: center;
         border-radius: 20px;
     }
+    .gameScreenDropBox {
+        border:1px dotted grey;
+        display: inline-block;
+        cursor: pointer;
+    }
+    /* DELETE */
+    .deleteDropBox {
+        background: url('images/dust.png') no-repeat;
+        background-size: cover;
+    }
+    /* SCORE */
+    .resultText{
+        color: black;
+        font-family: 'Verdana';
+        font-size: 40px;
+        font-variant: small-caps;
+        top:100px;
+        position: absolute;
+        font-weight: bold;
+
+    }
     /* ANSWER */
     #result{
         font-size: 40px;
