@@ -7,7 +7,27 @@ function getExpression(){
             var child = expression[i];
             console.log(child.getElementsByClassName("numberOperatorText").length);
             if(child.getElementsByClassName("numberOperatorText").length > 0){
-                //Implement this
+                var text = child.getElementsByClassName("numberOperatorText")[0];
+
+                if(text != undefined){
+                    if(text.innerHTML.replace(" ","") == "x"){
+                        builtExp += "*";
+                        console.log("+ here");
+
+                    }
+                    else{
+                        builtExp += (text.innerHTML);
+                        console.log(text.innerHTML);
+
+                    }
+                }
+
+                if(child.getElementsByClassName("numberOperatorText").length > 1){
+                    var input = child.getElementsByTagName("input")[0];
+                    builtExp += input.value;
+                    builtExp+=")";
+                }
+
             }
             else{
 
