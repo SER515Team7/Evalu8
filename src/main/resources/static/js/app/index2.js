@@ -22,7 +22,15 @@
             var doc = document.createDocumentFragment();
             var div = document.createElement("div");
             div.setAttribute("ondrop", "drop(event)");
-          
+            div.setAttribute("ondragover", "allowDrop(event)");
+            div.setAttribute("id", "div" + (children));
+            div.setAttribute("class", "dropBox gameScreenDropBox");
+
+            doc.appendChild(div);
+            document.getElementById("exp").appendChild(doc);
+
+
+            updateKeyBoard();
 
 
 
@@ -36,4 +44,15 @@
 
         }
         getExpression();
+    }
+
+
+        /*
+      This function  is to delete the objects dropped
+     */
+
+    function deleteNumberDropBoxElement(element) {
+        var parentNode = element.parentNode;
+        parentNode.removeChild(element);
+        parentNode.parentNode.removeChild(parentNode);
     }
