@@ -4,6 +4,7 @@ target/
 !**/src/main/**
 !**/src/test/**
 **/resources/application.properties
+pom.xml
 
 ### STS ###
 .apt_generated
