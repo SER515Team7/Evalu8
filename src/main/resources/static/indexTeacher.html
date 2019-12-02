@@ -26,8 +26,9 @@
           <div style="margin-top: 50px;color: blue;font-size: 25px;font-family: Verdana">
               <span  id ="assignments" onclick="redirectToAssignments()">Assignments</span>
           </div>
-	</div>
-       <!–– 
+                
+      </div>
+      <!–– 
       Button section
       -->
       <div class="keyboard flexCommon">
@@ -54,5 +55,25 @@
                   
                </div>
       </div>
-   </body>
+      <!–– 
+     sand box section
+      -->
+      <div id="gs" class="gameScreen">
+      <div class="gameView flexCommon">
+       
+         <div id="exp" class=" flexCommon expression">
+            <div id="div1" class="dropBox gameScreenDropBox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+         </div>
+      </div>
+     
+      <div class="gameCharacter">
+      </div>
+   </div> 
+    <script src="js/app/events.js"> </script>
+         <script>
+             function redirectToAssignments(){
+                 window.location.href = "assignment.html";
+             }
+         </script>
+   </body>  
 </html>
