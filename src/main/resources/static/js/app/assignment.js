@@ -83,7 +83,7 @@ $("#submit").on("click", function (){
     // database call to create new assignment the constructed json will be sent via rest
     function dbCallToCreateNewAssignment(root){
            $.ajax({
-            url: "http://localhost:8080/sandbox/login/",
+            url: "http://localhost:8080/login/",
             data: root,
             success: function (result) {
                 console.log(result);          

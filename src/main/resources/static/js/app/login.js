@@ -29,9 +29,9 @@ function ajaxCallForLogin(loginJson) {
 
     document.getElementById("errorMessage").style.display ="none";
     myJson = JSON.stringify(loginJson);
-    urlLink = "http://localhost:8080/sandbox/login/" + myJson;
+    urlLink = "http://localhost:8080/login/" + myJson;
     $.ajax({
-        url: "http://localhost:8080/sandbox/login/",
+        url: "http://localhost:8080/login/",
         data: loginJson,
         success: function (result) {
             console.log(result);
@@ -60,9 +60,9 @@ function navigate(grade) {
     localStorage.setItem("grade", grade);
     if (grade <= 3) {
         window.location.href = ("index.html");
-    } else if (grade > 3 && grade <= 8) {
+    } else if (grade > 3 && grade < 8) {
         window.location.href = ("index1.html");
-    } else if (grade > 8 && grade <= 12) {
+    } else if (grade >= 8 && grade <= 12) {
         window.location.href = ("index2.html");
     }
 
