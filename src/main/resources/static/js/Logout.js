@@ -1,4 +1,10 @@
 
+//Return to login function
+
+add_filter( 'logout_url', 'my_logout_url' );
+function my_logout_url( $url ) {
+    return 'http://yourdomain.com/?a=logout';
+}  
 
 jQuery(document).ready(function() {
 
@@ -22,7 +28,7 @@ jQuery(document).ready(function() {
 
         // Change color of logout button
         var str = "LogOut!";
-var result = str.fontcolor("blue");
+        var result = str.fontcolor("blue");
        
         window.location.href = "/Sign_In.html";
     });
