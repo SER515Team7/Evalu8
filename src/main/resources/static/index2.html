@@ -59,3 +59,27 @@ sand box section
 </div>
 <script src="js/app/index2.js"> </script>
 </html>
+<!––
+Result Section
+-->
+<div class="flexCommon gameDeleteScoreSaveWrapper">
+        <button id="clear" onclick="cl()" class="resultText" style="text-decoration: underline;cursor: pointer;position: relative;top: 150px;">
+                Clear
+        </button>
+    <button id="compute" onclick="getExpression()" class="resultText" style="cursor: pointer;text-decoration: underline;">
+        Result
+    </button>
+    <div id="answer">
+        <span id="result"></span>
+    </div>
+
+</div>
+<script>
+function cl(){
+    console.log("clearing");
+    window.location.href="index2.html";
+}
+
+</script>
+
+</html>
