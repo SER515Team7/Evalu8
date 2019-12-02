@@ -1,11 +1,4 @@
 
-//Return to login function
-
-add_filter( 'logout_url', 'my_logout_url' );
-function my_logout_url( $url ) {
-    return 'http://yourdomain.com/?a=logout';
-}  
-
 jQuery(document).ready(function() {
 
     Parse.$ = jQuery;
