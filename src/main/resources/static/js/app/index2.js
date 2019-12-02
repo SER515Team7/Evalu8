@@ -43,6 +43,16 @@ function getExpression(){
         }
 
     }
+
+
+    console.log(builtExp);
+    var rs = math.eval(builtExp.replace(" ","").toLowerCase());
+    if(rs!= undefined){
+        document.getElementById("result").innerHTML= math.eval(builtExp.replace(" ","").toLowerCase());
+    }
+    else{
+        document.getElementById("result").innerHTML="";
+    }
 }
 function updateKeyBoard() {
 
