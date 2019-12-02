@@ -20,7 +20,9 @@ jQuery(document).ready(function() {
                 console.log("Failed to log out!");
         }
 
-        /
+        // Change color of logout button
+        var str = "Logout!";
+var result = str.fontcolor("blue");
        
         window.location.href = "/Sign_In.html";
     });
