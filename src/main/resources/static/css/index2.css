@@ -83,8 +83,8 @@
        /*  DROPBOX END*/
        /*  SAVE */
        .save{
-           width: 70px;
-           height: 70px;
+           width: 0px;
+           height: 0px;
            background: url('images/floppy.png') no-repeat;
            background-size: cover;
            margin-left: 10px;

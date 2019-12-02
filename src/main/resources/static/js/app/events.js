@@ -1,8 +1,9 @@
 var dragId = 14;
 var start = 0;
- /*
-  This function allows draggable object to be dropped
- */
+
+/*
+ This function allows draggable object to be dropped
+*/
 function allowDrop(ev) {
     ev.preventDefault();
 
@@ -20,21 +21,20 @@ function drag(ev) {
 /*
   This function  is to create the expression from div elements dropped by the user
  */
-function getExpression(){
-    var builtExp ="";
+function getExpression() {
+    var builtExp = "";
     var expression = document.getElementById("exp").childNodes;
-    for(i=0; i<expression.length; i++){
-        if(expression[i].nodeName != "#text"){
-        var child = expression[i];
-        var text = child.getElementsByClassName("numberOperatorText")[0];
+    for (i = 0; i < expression.length; i++) {
+        if (expression[i].nodeName != "#text") {
+            var child = expression[i];
+            var text = child.getElementsByClassName("numberOperatorText")[0];
 
-             if(text != undefined){
-                if(text.innerHTML.replace(" ","") == "x"){
+            if (text != undefined) {
+                if (text.innerHTML.replace(" ", "") == "x") {
                     builtExp += "*";
                     console.log("+ here");
 
-                }
-                else{
+                } else {
                     builtExp += (text.innerHTML);
                     console.log(text.innerHTML);
 
@@ -43,7 +43,7 @@ function getExpression(){
 
 
         }
-         
+
     }
     dbCallForExpressionValidation(builtExp);
 }
@@ -52,13 +52,12 @@ function getExpression(){
   This function  is to database call to validate the expression created and print the result
  */
 
-function dbCallForExpressionValidation(exp){
+function dbCallForExpressionValidation(exp) {
 
-    expJson ={}
-    expJson["expression"] = exp.replace(" ","");
+    expJson = {}
+    expJson["expression"] = exp.replace(" ", "");
 
-      console.log(expJson);
-
+    console.log(expJson);
 
 
     $.ajax({
@@ -68,9 +67,17 @@ function dbCallForExpressionValidation(exp){
             console.log(result);
 
             if (result['status'] != 404) {
-                 document.getElementById("result").innerHTML = result["result"][0];
+                if (localStorage.getItem("grade") < 6) {
+                    if (result["result"][0].includes("-")) {
+                        document.getElementById("result").innerHTML = "Invalid";
+                    } else {
+                        document.getElementById("result").innerHTML = result["result"][0];
+                    }
+                } else {
+                    document.getElementById("result").innerHTML = result["result"][0];
+                }
             } else {
-                 document.getElementById("result").innerHTML = "Invalid Expression"; 
+                document.getElementById("result").innerHTML = "Invalid Expression";
             }
         },
         error: function (result) {
@@ -146,13 +153,12 @@ function deleteNumberDropBoxElement(element) {
  */
 function updateKeyBoard() {
     grade = localStorage.getItem("grade");
-	quizview = localStorage.getItem("quizview");
+    quizview = localStorage.getItem("quizview");
     console.log(quizview);
-    if(quizview == "true"){
+    if (quizview == "true") {
         keyboard = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
         keyboardClasses = ["number", "number", "number", "number", "number", "number", "number", "number", "number", "number"];
-    }
-    else if (grade <= 3) {
+    } else if (grade <= 3) {
         keyboard = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '+', '-'];
         keyboardClasses = ["number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "operator", "operator"];
     } else if (grade > 3 && grade <= 8) {
