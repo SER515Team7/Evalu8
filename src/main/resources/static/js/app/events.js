@@ -146,8 +146,13 @@ function deleteNumberDropBoxElement(element) {
  */
 function updateKeyBoard() {
     grade = localStorage.getItem("grade");
-
-    if (grade <= 3) {
+	quizview = localStorage.getItem("quizview");
+    console.log(quizview);
+    if(quizview == "true"){
+        keyboard = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        keyboardClasses = ["number", "number", "number", "number", "number", "number", "number", "number", "number", "number"];
+    }
+    else if (grade <= 3) {
         keyboard = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '+', '-'];
         keyboardClasses = ["number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "operator", "operator"];
     } else if (grade > 3 && grade <= 8) {
