@@ -21,7 +21,7 @@ jQuery(document).ready(function() {
         }
 
         // Change color of logout button
-        var str = "Logout!";
+        var str = "LogOut!";
 var result = str.fontcolor("blue");
        
         window.location.href = "/Sign_In.html";
