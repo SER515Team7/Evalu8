@@ -82,17 +82,24 @@ $("#submit").on("click", function (){
 
     // database call to create new assignment the constructed json will be sent via rest
     function dbCallToCreateNewAssignment(root){
-           $.ajax({
-            url: "http://localhost:8080/login/",
-            data: root,
-            success: function (result) {
-                console.log(result);          
-            },
-            error: function (result) {
-            }
-    
-          });
+         
+    $.ajax({
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        dataType : 'json',
+        url: '/addAssign',
+        data: JSON.stringify(root),
+        success: function (result) {
+            console.log(result);
 
-           document.getElementById("status").style.display = "block";
-           document.getElementById("status").innerHTML = "Successfully Submitted";
+
+        },
+        error: function (result) {
+
+        }
+
+    });
+
+    document.getElementById("status").style.display = "block";
+    document.getElementById("status").innerHTML = "Successfully Submitted";
     }
